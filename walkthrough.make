@@ -12,12 +12,12 @@ includes[] = drupal-org.make
 
 projects[walkhub][type] = "module"
 projects[walkhub][download][type] = "git"
-projects[walkhub][download][url] = "https://github.com/Pronovix/WalkHub-module.git"
+projects[walkhub][download][url] = "https://github.com/dennisinteractive/WalkHub-module.git"
 projects[walkhub][subdir] = contrib
 
 projects[walkhub_client][type] = "module"
 projects[walkhub_client][download][type] = "git"
-projects[walkhub_client][download][url] = "https://github.com/Pronovix/Drupal-WalkHub-client.git"
+projects[walkhub_client][download][url] = "https://github.com/dennisinteractive/Drupal-WalkHub-client.git"
 projects[walkhub_client][subdir] = contrib
 
 projects[janrain_capture][type] = "module"
@@ -32,7 +32,7 @@ libraries[resources][subdir] = walkhub
 
 libraries[bigscreen][type] = "module"
 libraries[bigscreen][download][type] = "git"
-libraries[bigscreen][download][url] = "https://github.com/bdougherty/BigScreen.git"
+libraries[bigscreen][download][url] = "https://github.com/dennisinteractive/BigScreen.git"
 libraries[bigscreen][download][tag] = "v2.0.4"
 libraries[bigscreen][subdir] = bigscreen
 
