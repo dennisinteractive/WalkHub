@@ -27,12 +27,12 @@ projects[janrain_capture][subdir] = contrib
 
 libraries[resources][type] = "module"
 libraries[resources][download][type] = "git"
-libraries[resources][download][url] = "https://github.com/Pronovix/WalkHub-resources.git"
+libraries[resources][download][url] = "https://github.com/dennisinteractive/WalkHub-resources.git"
 libraries[resources][subdir] = walkhub
 
 libraries[bigscreen][type] = "module"
 libraries[bigscreen][download][type] = "git"
-libraries[bigscreen][download][url] = "https://github.com/dennisinteractive/BigScreen.git"
+libraries[bigscreen][download][url] = "https://github.com/bdougherty/BigScreen.git"
 libraries[bigscreen][download][tag] = "v2.0.4"
 libraries[bigscreen][subdir] = bigscreen
 
