@@ -3,8 +3,8 @@ Walkhub
 
 Prerequisites
 
-Git
-Drush
+- Git
+- Drush
 
 Installation
 
