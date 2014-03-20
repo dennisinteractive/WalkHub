@@ -12,7 +12,7 @@ Installation
   
     cd /Users/Shared
 
-  - Copy and paste the following command into your shell terminal to install everything:
+  - Copy and paste the following command into your shell terminal to install everything. This will create a folder with the name walkhub inside your chosen installation directory:
   
     curl -L -s http://goo.gl/AWcyA6 | bash
   
