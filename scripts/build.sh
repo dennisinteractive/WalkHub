@@ -30,6 +30,9 @@ function f_install_site() {
   echo
   echo "[Info] Now you can install your distro site using your browser. If you want to use drush, you can use the commands below"
   echo "drush si -y walkthrough --db-url=\"mysql://root@localhost/walkhub\" --site-name=\"WalkHub\" --account-name=admin --account-pass=password --sites-subdir=default"
+  echo Drupal login details:
+  echo user: admin
+  echo pass: password
   echo
 }
 
