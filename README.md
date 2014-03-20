@@ -23,10 +23,8 @@ Installation
     - Build a Distro that contains a profile called walkthrough
     - Run build script that will download Drush if necessary, build the site.
     
-  - Now you can install your distro site using your browser. If you want to use drush, you can use the commands below. 
-    
-    Change the parameters as necessary:
+  - Now you can install your distro site using your browser. Alternatively, if you want to use drush, you can use the commands below, changing the parameters as necessary:
     
     cd walkhub/sites/default/
 
-    drush si -y walkhub --db-url="mysql://root@localhost/walkhub" --site-name="WalkHub" --account-name=admin --account-pass=password --sites-subdir=default
+    drush si -y walkthrough --db-url="mysql://root@localhost/walkhub" --site-name="WalkHub" --account-name=admin --account-pass=password --sites-subdir=default
