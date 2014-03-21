@@ -23,6 +23,9 @@ projects[captcha][version] = "1.0"
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = "1.13"
 
+projects[legal][subdir] = "contrib"
+projects[legal][version] = "1.4"
+
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0-rc2"
 
