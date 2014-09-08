@@ -24,20 +24,24 @@ function walkthrough_global_metatag_export_default() {
           'nosnippet' => 0,
           'noodp' => 0,
           'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
         ),
       ),
+      'og:image' => array(
+        'value' => '[node:wt_twitter_screenshot]',
+      ),
+      'twitter:card' => array(
+        'value' => 'photo',
+      ),
       'twitter:creator' => array(
         'value' => '@WalkHub',
       ),
-    ),
-  );
-
-  // Exported Metatag config instance: node:walkthrough_public_collection.
-  $config['node:walkthrough_public_collection'] = array(
-    'instance' => 'node:walkthrough_public_collection',
-    'config' => array(
-      'twitter:creator' => array(
-        'value' => '@WalkHub',
+      'twitter:creator:id' => array(
+        'value' => 1226273473,
+      ),
+      'twitter:image' => array(
+        'value' => '[node:wt_twitter_screenshot]',
       ),
     ),
   );

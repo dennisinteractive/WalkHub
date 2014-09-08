@@ -37,6 +37,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'access comments'.
+  $permissions['access comments'] = array(
+    'name' => 'access comments',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -110,6 +119,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'add userpoints'.
+  $permissions['add userpoints'] = array(
+    'name' => 'add userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
+  );
+
   // Exported permission: 'administer CAPTCHA settings'.
   $permissions['administer CAPTCHA settings'] = array(
     'name' => 'administer CAPTCHA settings',
@@ -122,7 +140,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'administer Terms and Conditions'.
   $permissions['administer Terms and Conditions'] = array(
     'name' => 'administer Terms and Conditions',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'legal',
   );
 
@@ -144,6 +164,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'block',
   );
 
+  // Exported permission: 'administer browser class'.
+  $permissions['administer browser class'] = array(
+    'name' => 'administer browser class',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'browserclass',
+  );
+
   // Exported permission: 'administer ckeditor'.
   $permissions['administer ckeditor'] = array(
     'name' => 'administer ckeditor',
@@ -151,6 +180,15 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer comments'.
+  $permissions['administer comments'] = array(
+    'name' => 'administer comments',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'comment',
   );
 
   // Exported permission: 'administer consumers'.
@@ -192,7 +230,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'field_group',
   );
 
@@ -239,6 +279,24 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'image',
+  );
+
+  // Exported permission: 'administer invitations'.
+  $permissions['administer invitations'] = array(
+    'name' => 'administer invitations',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
+  );
+
+  // Exported permission: 'administer invite types'.
+  $permissions['administer invite types'] = array(
+    'name' => 'administer invite types',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
   );
 
   // Exported permission: 'administer menu'.
@@ -394,6 +452,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'administer userpoints'.
+  $permissions['administer userpoints'] = array(
+    'name' => 'administer userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
+  );
+
   // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
@@ -424,15 +491,28 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'administer walkhub patterns'.
   $permissions['administer walkhub patterns'] = array(
     'name' => 'administer walkhub patterns',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'walkhub',
   );
 
   // Exported permission: 'administer walkthrough'.
   $permissions['administer walkthrough'] = array(
     'name' => 'administer walkthrough',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'walkhub',
+  );
+
+  // Exported permission: 'administer walkthrough client'.
+  $permissions['administer walkthrough client'] = array(
+    'name' => 'administer walkthrough client',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'walkhub_client',
   );
 
   // Exported permission: 'block IP addresses'.
@@ -484,7 +564,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'clone accessible content'.
   $permissions['clone accessible content'] = array(
     'name' => 'clone accessible content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'walkthrough_global',
   );
 
@@ -507,11 +589,40 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'clone',
   );
 
+  // Exported permission: 'create any invite entities'.
+  $permissions['create any invite entities'] = array(
+    'name' => 'create any invite entities',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
+  );
+
   // Exported permission: 'create blog_entry content'.
   $permissions['create blog_entry content'] = array(
     'name' => 'create blog_entry content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create collection content'.
+  $permissions['create collection content'] = array(
+    'name' => 'create collection content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create invite_by_email entity'.
+  $permissions['create invite_by_email entity'] = array(
+    'name' => 'create invite_by_email entity',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
   );
 
   // Exported permission: 'create messages'.
@@ -553,14 +664,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'create walkhub_faq_page content'.
   $permissions['create walkhub_faq_page content'] = array(
     'name' => 'create walkhub_faq_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create walkhub_key_feature content'.
+  $permissions['create walkhub_key_feature content'] = array(
+    'name' => 'create walkhub_key_feature content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create walkhub_news content'.
   $permissions['create walkhub_news content'] = array(
     'name' => 'create walkhub_news content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -569,24 +693,6 @@ function walkthrough_permissions_user_default_permissions() {
     'name' => 'create walkthrough content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create walkthrough_collection content'.
-  $permissions['create walkthrough_collection content'] = array(
-    'name' => 'create walkthrough_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create walkthrough_public_collection content'.
-  $permissions['create walkthrough_public_collection content'] = array(
-    'name' => 'create walkthrough_public_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
     ),
     'module' => 'node',
   );
@@ -612,59 +718,69 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'delete any blog_entry content'.
   $permissions['delete any blog_entry content'] = array(
     'name' => 'delete any blog_entry content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any collection content'.
+  $permissions['delete any collection content'] = array(
+    'name' => 'delete any collection content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any screening content'.
   $permissions['delete any screening content'] = array(
     'name' => 'delete any screening content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any walkhub_faq_page content'.
   $permissions['delete any walkhub_faq_page content'] = array(
     'name' => 'delete any walkhub_faq_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any walkhub_key_feature content'.
+  $permissions['delete any walkhub_key_feature content'] = array(
+    'name' => 'delete any walkhub_key_feature content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any walkhub_news content'.
   $permissions['delete any walkhub_news content'] = array(
     'name' => 'delete any walkhub_news content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any walkthrough content'.
   $permissions['delete any walkthrough content'] = array(
     'name' => 'delete any walkthrough content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any walkthrough_collection content'.
-  $permissions['delete any walkthrough_collection content'] = array(
-    'name' => 'delete any walkthrough_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any walkthrough_public_collection content'.
-  $permissions['delete any walkthrough_public_collection content'] = array(
-    'name' => 'delete any walkthrough_public_collection content',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -683,7 +799,18 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'delete own blog_entry content'.
   $permissions['delete own blog_entry content'] = array(
     'name' => 'delete own blog_entry content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own collection content'.
+  $permissions['delete own collection content'] = array(
+    'name' => 'delete own collection content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -708,14 +835,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'delete own walkhub_faq_page content'.
   $permissions['delete own walkhub_faq_page content'] = array(
     'name' => 'delete own walkhub_faq_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own walkhub_key_feature content'.
+  $permissions['delete own walkhub_key_feature content'] = array(
+    'name' => 'delete own walkhub_key_feature content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own walkhub_news content'.
   $permissions['delete own walkhub_news content'] = array(
     'name' => 'delete own walkhub_news content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -723,26 +863,6 @@ function walkthrough_permissions_user_default_permissions() {
   $permissions['delete own walkthrough content'] = array(
     'name' => 'delete own walkthrough content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own walkthrough_collection content'.
-  $permissions['delete own walkthrough_collection content'] = array(
-    'name' => 'delete own walkthrough_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own walkthrough_public_collection content'.
-  $permissions['delete own walkthrough_public_collection content'] = array(
-    'name' => 'delete own walkthrough_public_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -770,13 +890,24 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'delete terms in blog_category'.
   $permissions['delete terms in blog_category'] = array(
     'name' => 'delete terms in blog_category',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in tags'.
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in userpoints'.
+  $permissions['delete terms in userpoints'] = array(
+    'name' => 'delete terms in userpoints',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -795,8 +926,28 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit any blog_entry content'.
   $permissions['edit any blog_entry content'] = array(
     'name' => 'edit any blog_entry content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit any collection content'.
+  $permissions['edit any collection content'] = array(
+    'name' => 'edit any collection content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any invite entities'.
+  $permissions['edit any invite entities'] = array(
+    'name' => 'edit any invite entities',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
   );
 
   // Exported permission: 'edit any page content'.
@@ -820,38 +971,33 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit any walkhub_faq_page content'.
   $permissions['edit any walkhub_faq_page content'] = array(
     'name' => 'edit any walkhub_faq_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any walkhub_key_feature content'.
+  $permissions['edit any walkhub_key_feature content'] = array(
+    'name' => 'edit any walkhub_key_feature content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any walkhub_news content'.
   $permissions['edit any walkhub_news content'] = array(
     'name' => 'edit any walkhub_news content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any walkthrough content'.
   $permissions['edit any walkthrough content'] = array(
     'name' => 'edit any walkthrough content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any walkthrough_collection content'.
-  $permissions['edit any walkthrough_collection content'] = array(
-    'name' => 'edit any walkthrough_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any walkthrough_public_collection content'.
-  $permissions['edit any walkthrough_public_collection content'] = array(
-    'name' => 'edit any walkthrough_public_collection content',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -879,8 +1025,37 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit own blog_entry content'.
   $permissions['edit own blog_entry content'] = array(
     'name' => 'edit own blog_entry content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit own collection content'.
+  $permissions['edit own collection content'] = array(
+    'name' => 'edit own collection content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own comments'.
+  $permissions['edit own comments'] = array(
+    'name' => 'edit own comments',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'comment',
+  );
+
+  // Exported permission: 'edit own invite entities'.
+  $permissions['edit own invite entities'] = array(
+    'name' => 'edit own invite entities',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
   );
 
   // Exported permission: 'edit own page content'.
@@ -904,14 +1079,27 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit own walkhub_faq_page content'.
   $permissions['edit own walkhub_faq_page content'] = array(
     'name' => 'edit own walkhub_faq_page content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own walkhub_key_feature content'.
+  $permissions['edit own walkhub_key_feature content'] = array(
+    'name' => 'edit own walkhub_key_feature content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own walkhub_news content'.
   $permissions['edit own walkhub_news content'] = array(
     'name' => 'edit own walkhub_news content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'node',
   );
 
@@ -919,26 +1107,6 @@ function walkthrough_permissions_user_default_permissions() {
   $permissions['edit own walkthrough content'] = array(
     'name' => 'edit own walkthrough content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own walkthrough_collection content'.
-  $permissions['edit own walkthrough_collection content'] = array(
-    'name' => 'edit own walkthrough_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own walkthrough_public_collection content'.
-  $permissions['edit own walkthrough_public_collection content'] = array(
-    'name' => 'edit own walkthrough_public_collection content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -957,7 +1125,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'edit terms in blog_category'.
   $permissions['edit terms in blog_category'] = array(
     'name' => 'edit terms in blog_category',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -970,31 +1140,59 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in userpoints'.
+  $permissions['edit terms in userpoints'] = array(
+    'name' => 'edit terms in userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit userpoints'.
+  $permissions['edit userpoints'] = array(
+    'name' => 'edit userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
+  );
+
   // Exported permission: 'export any walkthrough'.
   $permissions['export any walkthrough'] = array(
     'name' => 'export any walkthrough',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'walkhub',
   );
 
   // Exported permission: 'export own walkthrough'.
   $permissions['export own walkthrough'] = array(
     'name' => 'export own walkthrough',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'walkhub',
   );
 
   // Exported permission: 'flag mark_for_screening'.
   $permissions['flag mark_for_screening'] = array(
     'name' => 'flag mark_for_screening',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'flag subscribe_content'.
   $permissions['flag subscribe_content'] = array(
     'name' => 'flag subscribe_content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'flag',
   );
 
@@ -1019,7 +1217,9 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'features',
   );
 
@@ -1076,6 +1276,15 @@ function walkthrough_permissions_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'walkhub_screening_queue',
+  );
+
+  // Exported permission: 'moderate userpoints'.
+  $permissions['moderate userpoints'] = array(
+    'name' => 'moderate userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
   );
 
   // Exported permission: 'notify of path changes'.
@@ -1141,6 +1350,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'services',
   );
 
+  // Exported permission: 'post comments'.
+  $permissions['post comments'] = array(
+    'name' => 'post comments',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
@@ -1177,6 +1395,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'services',
   );
 
+  // Exported permission: 'show format selection for comment'.
+  $permissions['show format selection for comment'] = array(
+    'name' => 'show format selection for comment',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
   // Exported permission: 'show format selection for field_collection_item'.
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',
@@ -1189,6 +1416,15 @@ function walkthrough_permissions_user_default_permissions() {
   // Exported permission: 'show format selection for flagging'.
   $permissions['show format selection for flagging'] = array(
     'name' => 'show format selection for flagging',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: 'show format selection for invite'.
+  $permissions['show format selection for invite'] = array(
+    'name' => 'show format selection for invite',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -1303,17 +1539,30 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'captcha',
   );
 
+  // Exported permission: 'skip comment approval'.
+  $permissions['skip comment approval'] = array(
+    'name' => 'skip comment approval',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: 'unflag mark_for_screening'.
   $permissions['unflag mark_for_screening'] = array(
     'name' => 'unflag mark_for_screening',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'flag',
   );
 
   // Exported permission: 'unflag subscribe_content'.
   $permissions['unflag subscribe_content'] = array(
     'name' => 'unflag subscribe_content',
-    'roles' => array(),
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
     'module' => 'flag',
   );
 
@@ -1344,6 +1593,15 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'use text format blog_entry_text_format'.
+  $permissions['use text format blog_entry_text_format'] = array(
+    'name' => 'use text format blog_entry_text_format',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'use text format full_html'.
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
@@ -1363,13 +1621,32 @@ function walkthrough_permissions_user_default_permissions() {
     'module' => 'legal',
   );
 
+  // Exported permission: 'view any invite entities'.
+  $permissions['view any invite entities'] = array(
+    'name' => 'view any invite entities',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view own userpoints'.
+  $permissions['view own userpoints'] = array(
+    'name' => 'view own userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
   );
 
   // Exported permission: 'view revisions'.
@@ -1388,6 +1665,33 @@ function walkthrough_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'view userpoints'.
+  $permissions['view userpoints'] = array(
+    'name' => 'view userpoints',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'userpoints',
+  );
+
+  // Exported permission: 'withdraw own accepted invitations'.
+  $permissions['withdraw own accepted invitations'] = array(
+    'name' => 'withdraw own accepted invitations',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
+  );
+
+  // Exported permission: 'withdraw own invitations'.
+  $permissions['withdraw own invitations'] = array(
+    'name' => 'withdraw own invitations',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'invite',
   );
 
   return $permissions;

@@ -577,8 +577,338 @@ function walkthrough_global_update_7037() {
 }
 
 /**
- * Rever Walkhub feature.
+ * Revert Walkhub feature.
  */
 function walkthrough_global_update_7038() {
   walkhub_features_revert(array('walkhub'));
 }
+
+/**
+ * Revert Walkhub permission feature.
+ */
+function walkthrough_global_update_7039() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Revert Walkhub blog menu button entry.
+ */
+function walkthrough_global_update_7040() {
+  walkhub_features_revert(array('walkthrough_global'));
+}
+
+/**
+ * Update Front Page heading block data.
+ */
+function walkthrough_global_update_7041() {
+  $features_block_custom_table_values = _walkthrough_recreate_front_page_featured_block_contents();
+  $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
+  $query->execute();
+}
+
+/**
+ * Turning on Page Type: Walkhub key feature.
+ */
+function walkthrough_global_update_7042() {
+  $key_features = array('walkhub_key_feature');
+
+  module_enable($key_features);
+  features_install_modules($key_features);
+
+  return t('Enabled Walkhub key features content type.');
+}
+
+/**
+ * Revert walkthrough_global feature.
+ */
+function walkthrough_global_update_7043() {
+  walkhub_features_revert(array('walkthrough_global'));
+
+  return t('Walkhub Global feature reverted.');
+}
+
+/**
+ * Update Front Page featured walkthroughs data.
+ */
+function walkthrough_global_update_7044() {
+  $featured_walkthroughs_custom_table_values = _walkthrough_recreate_front_page_featured_walkthroughs_contents();
+  $query = db_update('block_custom')->fields($featured_walkthroughs_custom_table_values)->condition('info', 'Sample WT Top', '=');
+  $query->execute();
+}
+
+/**
+ * Update Front Page heading block data.
+ */
+function walkthrough_global_update_7045() {
+  $features_block_custom_table_values = _walkthrough_recreate_front_page_featured_block_contents();
+  $query = db_update('block_custom')->fields($features_block_custom_table_values)->condition('info', 'Front Page Heading', '=');
+  $query->execute();
+}
+
+/**
+ * Revert Walkhub permission feature.
+ */
+function walkthrough_global_update_7046() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Revert 'Walkhub key feature' feature.
+ */
+function walkthrough_global_update_7047() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
+
+/**
+ * Revert 'Walkhub key feature' feature.
+ */
+function walkthrough_global_update_7048() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
+
+/**
+ * Remove 'My Walkthroughs' block from left sidebar.
+ */
+function walkthrough_global_update_7049() {
+  $my_walkthroughs_block_content = _walkthrough_remove_my_walkthroughs_block_from_left_sidebar();
+  $query = db_update('block')
+    ->fields(array('status' => $my_walkthroughs_block_content['status']))
+    ->condition('theme', $my_walkthroughs_block_content['theme'], '=')
+    ->condition('delta', $my_walkthroughs_block_content['delta'], '=');
+  $query->execute();
+}
+
+/**
+ * Revert 'Walkhub key feature' feature.
+ */
+function walkthrough_global_update_7050() {
+  walkhub_features_revert(array('walkhub_key_feature'));
+}
+
+/**
+ * Revert 'Walkhub collections' and "Global" feature.
+ */
+function walkthrough_global_update_7051() {
+  walkhub_features_revert(array('walkhub_collections', 'walkthrough_global'));
+}
+
+/**
+ * Set the collection block's place.
+ */
+function walkthrough_global_update_7052() {
+  db_merge('block')
+    ->key(array(
+      'module' => 'views',
+      'delta' => 'collection_content-block_1',
+      'theme' => 'walkhub_theme'))
+    ->fields(array(
+      'status' => 1,
+      'region' => 'content',
+      'weight' => 1,
+      'pages' => '',
+      'title' => '',
+    ))
+    ->execute();
+}
+
+/**
+ * Revert walkhub comments feature.
+ */
+function walkthrough_global_update_7053() {
+  walkhub_features_revert(array('walkhub_comments'));
+}
+
+/**
+ * Revert walkhub collections feature.
+ */
+function walkthrough_global_update_7054() {
+  // Enable og access module and rebuild permissions.
+  walkhub_features_revert(array('walkhub_collections'));
+  node_access_rebuild();
+}
+
+/**
+ * Enable Chosen module.
+ */
+function walkthrough_global_update_7055() {
+  module_enable(array('chosen'));
+}
+
+/**
+ * Migrate old WT collections to the new one.
+ */
+function walkthrough_global_update_7056(&$sandbox) {
+  if (empty($sandbox['total'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['last_nid'] = 0;
+
+    // Count the total number of the old collection nodes.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
+      ->count();
+    $sandbox['total'] = $query->execute();
+  }
+
+  // Get the next 10 old collection nodes.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN')
+    ->propertyCondition('nid', $sandbox['last_nid'], '>')
+    ->propertyOrderBy('nid')
+    ->range(0, 10);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = entity_load('node', $nids);
+
+    foreach ($nodes as $node) {
+      // Init properties.
+      $collection_node = new stdClass();
+      $collection_node->type = 'collection';
+      $collection_node->title = $node->title;
+      node_object_prepare($collection_node);
+      // Inherited properties.
+      $collection_node->uid = $node->uid;
+      $collection_node->status = $node->status;
+      $collection_node->comment = $node->comment;
+      $collection_node->promote = $node->promote;
+      $collection_node->stickey = $node->stickey;
+      $collection_node->language = $node->language;
+      $collection_node->created = $node->created;
+      // OG related fields.
+      $collection_node->{OG_ACCESS_FIELD}[$node->language][] = array(
+        'value' => $node->type == 'walkthrough_public_collection' ? 0 : 1,
+      );
+      $collection_node->{OG_GROUP_FIELD} = $node->{OG_GROUP_FIELD};
+      $collection_node->name = $node->name;
+      // Save new node.
+      node_save($collection_node);
+
+      // Get the memberships (user, node and other entities)
+      $query = new EntityFieldQuery();
+      $result = $query
+        ->entityCondition('entity_type', 'og_membership')
+        ->propertyCondition('gid', $node->nid, '=')
+        ->execute();
+
+      if (!empty($result['og_membership'])) {
+        $relation_etids = array_keys($result['og_membership']);
+        $relation_entities = entity_load('og_membership', $relation_etids);
+
+        // Create a new membership with the new collection.
+        foreach ($relation_entities as $entity) {
+          // Avoid double membership error.
+          if ($entity->entity_type == 'user' && $entity->etid == $collection_node->uid) {
+            continue;
+          }
+          $og_membership = og_membership_create($entity->group_type, $collection_node->nid, $entity->entity_type, $entity->etid, $entity->field_name);
+          $og_membership->save();
+
+          if ($entity->entity_type == 'user') {
+            // Check what is the new rid of the group. Role id's are different
+            // in group content types so we have to search it by name.
+            $user_roles = og_get_user_roles($entity->group_type, $entity->gid, $entity->etid, FALSE);
+            $new_og_roles = og_roles($entity->group_type, $entity->bundle, $collection_node->nid, FALSE, FALSE);
+            foreach ($user_roles as $role_name) {
+              $new_rid = array_search($role_name, $new_og_roles);
+              if ($new_rid !== FALSE) {
+                og_role_grant($entity->group_type, $collection_node->nid, $entity->etid, $new_rid);
+              }
+            }
+          }
+        }
+      }
+
+      // Store the last node id and update progress.
+      $sandbox['last_nid'] = $node->nid;
+      $sandbox['progress']++;
+    }
+  }
+
+  // Set the finished variable based on the current progress status.
+  $sandbox['#finished'] = $sandbox['progress'] / $sandbox['total'];
+
+  return t('The old collections are migrated to the new one.');
+}
+
+/**
+ * Delete public and private collections.
+ */
+function walkthrough_global_update_7057() {
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('walkthrough_public_collection', 'walkthrough_collection'), 'IN');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+
+  node_type_delete('walkthrough_public_collection');
+  node_type_delete('walkthrough_collection');
+}
+
+/**
+* Revert "Walkhub" feature.
+*/
+function walkthrough_global_update_7058() {
+  walkhub_features_revert(array('walkhub'));
+}
+
+/**
+ * Enable imagecache_actions and walkhub_tcard modules.
+ */
+function walkthrough_global_update_7059() {
+  module_enable(array('imagecache_actions', 'walkhub_tcard'));
+  return 'Image cache actions, and Walkhub twitter card modules has been enabled.';
+}
+
+/**
+ * Enable imagecache_actions - canvas actions and metatag - metatag twitter cards modules.
+ */
+function walkthrough_global_update_7060() {
+  module_enable(array('metatag_twitter_cards', 'imagecache_canvasactions'));
+  return 'Image cache actions - Canvas actions, and Metatag - twitter cards modules has been enabled.';
+}
+
+/**
+ * Revert walkthrough_screening feature to modify "Mark for screening" button.
+ */
+function walkthrough_global_update_7061() {
+  walkhub_features_revert(array("walkthrough_screening"));
+  return "walkthrough_screening feature reverted.";
+}
+
+/**
+ * Revert Walkthrough permissions feature.
+ */
+function walkthrough_global_update_7062() {
+  walkhub_features_revert(array('walkthrough_permissions'));
+}
+
+/**
+ * Revert Walkthrough global feature.
+ */
+function walkthrough_global_update_7063() {
+  walkhub_features_revert(array('walkthrough_global'));
+}
+
+/**
+ * Revert Walkhub collections feature.
+ */
+function walkthrough_global_update_7064() {
+  walkhub_features_revert(array('walkhub_collections'));
+}
+
+/**
+ * Enable the walkthrough_sharelink module.
+ */
+function walkthrough_global_update_7065() {
+  module_enable(array('walkthrough_sharelink'), TRUE);
+}
+

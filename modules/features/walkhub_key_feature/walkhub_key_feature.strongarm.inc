@@ -1,68 +1,68 @@
 <?php
 /**
  * @file
- * walkhub_collections.strongarm.inc
+ * walkhub_key_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function walkhub_collections_strongarm() {
+function walkhub_key_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_collection';
+  $strongarm->name = 'comment_anonymous_walkhub_key_feature';
   $strongarm->value = 0;
-  $export['comment_anonymous_collection'] = $strongarm;
+  $export['comment_anonymous_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_collection';
-  $strongarm->value = '0';
-  $export['comment_collection'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_collection';
+  $strongarm->name = 'comment_default_mode_walkhub_key_feature';
   $strongarm->value = 1;
-  $export['comment_default_mode_collection'] = $strongarm;
+  $export['comment_default_mode_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_collection';
+  $strongarm->name = 'comment_default_per_page_walkhub_key_feature';
   $strongarm->value = '50';
-  $export['comment_default_per_page_collection'] = $strongarm;
+  $export['comment_default_per_page_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_collection';
+  $strongarm->name = 'comment_form_location_walkhub_key_feature';
   $strongarm->value = 1;
-  $export['comment_form_location_collection'] = $strongarm;
+  $export['comment_form_location_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_collection';
+  $strongarm->name = 'comment_preview_walkhub_key_feature';
   $strongarm->value = '1';
-  $export['comment_preview_collection'] = $strongarm;
+  $export['comment_preview_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_collection';
+  $strongarm->name = 'comment_subject_field_walkhub_key_feature';
   $strongarm->value = 1;
-  $export['comment_subject_field_collection'] = $strongarm;
+  $export['comment_subject_field_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__collection';
+  $strongarm->name = 'comment_walkhub_key_feature';
+  $strongarm->value = '0';
+  $export['comment_walkhub_key_feature'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__walkhub_key_feature';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -85,48 +85,61 @@ function walkhub_collections_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__collection'] = $strongarm;
+  $export['field_bundle_settings_node__walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_collection';
+  $strongarm->name = 'menu_options_walkhub_key_feature';
   $strongarm->value = array();
-  $export['menu_options_collection'] = $strongarm;
+  $export['menu_options_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_collection';
+  $strongarm->name = 'menu_parent_walkhub_key_feature';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_collection'] = $strongarm;
+  $export['menu_parent_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_collection';
+  $strongarm->name = 'node_options_walkhub_key_feature';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_collection'] = $strongarm;
+  $export['node_options_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_collection';
-  $strongarm->value = '0';
-  $export['node_preview_collection'] = $strongarm;
+  $strongarm->name = 'node_preview_walkhub_key_feature';
+  $strongarm->value = '1';
+  $export['node_preview_walkhub_key_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_collection';
+  $strongarm->name = 'node_submitted_walkhub_key_feature';
   $strongarm->value = 0;
-  $export['node_submitted_collection'] = $strongarm;
+  $export['node_submitted_walkhub_key_feature'] = $strongarm;
 
   return $export;
 }
