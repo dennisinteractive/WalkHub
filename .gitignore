@@ -10,3 +10,8 @@ sites/*/private
 .idea
 .DS_Store
 .project
+
+# Ignore contrib.
+modules/contrib
+libraries
+
