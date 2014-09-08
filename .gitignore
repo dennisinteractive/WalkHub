@@ -13,5 +13,6 @@ sites/*/private
 
 # Ignore contrib.
 modules/contrib
+themes/contrib
 libraries
 

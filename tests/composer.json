@@ -1,0 +1,13 @@
+{
+    "name": "pronovix/walkhub-tests",
+    "description": "Test framework for WalkHub",
+    "authors": [
+        {
+            "name": "Kornel Lugosi",
+            "email": "coornail@gmail.com"
+        }
+    ],
+    "require": {
+        "sauce/sausage": ">=0.4.0"
+    }
+}

@@ -82,8 +82,8 @@ projects[invite][subdir] = "contrib"
 projects[invite][version] = "4.0-beta2"
 
 # was 7.x-2.3+6-dev
-projects[jquery_update][type] = "module"
 projects[jquery_update][version] = "2.4"
+projects[jquery_update][subdir] = "contrib"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.1"
