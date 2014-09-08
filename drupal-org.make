@@ -8,17 +8,26 @@ projects[views_bulk_operations][version] = "3.1"
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc4"
 
+projects[auto_nodetitle][subdir] = "contrib"
+projects[auto_nodetitle][version] = "1.0"
+
 projects[better_formats][subdir] = "contrib"
 projects[better_formats][version] = "1.0-beta1"
 
 projects[browserclass][subdir] = "contrib"
 projects[browserclass][version] = "1.7"
 
+projects[backup_migrate][subdir] = "contrib"
+projects[backup_migrate][version] = "2.7"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.4"
 
 projects[captcha][subdir] = "contrib"
 projects[captcha][version] = "1.0"
+
+projects[chosen][subdir] = "contrib"
+projects[chosen][version] = "2.0-beta4"
 
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = "1.13"
@@ -30,8 +39,14 @@ libraries[ckeditor][destination] = modules/contrib/ckeditor
 projects[legal][subdir] = "contrib"
 projects[legal][version] = "1.4"
 
+projects[devel][subdir] = "contrib"
+projects[devel][version] = "1.3"
+
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0-rc2"
+
+projects[nodequeue][subdir] = "contrib"
+projects[nodequeue][version] = "2.0-beta1"
 
 projects[color_field][subdir] = "contrib"
 projects[color_field][version] = "1.6"
@@ -58,13 +73,17 @@ projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.2"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "1.3"
+projects[google_analytics][version] = "2.0"
 
+projects[imagecache_actions][subdir] = "contrib"
+projects[imagecache_actions][version] = "1.4"
+
+projects[invite][subdir] = "contrib"
+projects[invite][version] = "4.0-beta2"
+
+# was 7.x-2.3+6-dev
 projects[jquery_update][type] = "module"
-projects[jquery_update][download][type] = "git"
-projects[jquery_update][download][url] = "http://git.drupal.org/project/jquery_update.git"
-projects[jquery_update][download][revision] = "65eecb0f1fc69cf6831a66440f72e33a1effb1f3"
-projects[jquery_update][subdir] = contrib
+projects[jquery_update][version] = "2.4"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.1"
@@ -78,17 +97,23 @@ projects[markdown][version] = "1.2"
 projects[message][subdir] = "contrib"
 projects[message][version] = "1.9"
 
+projects[memcache][subdir] = "contrib"
+projects[memcache][version] = "1.2"
+
 projects[message_notify][subdir] = "contrib"
 projects[message_notify][version] = "2.5"
 
 projects[metatag][subdir] = "contrib"
-projects[metatag][version] = "1.0-beta7"
+projects[metatag][version] = "1.0-beta9"
+
+projects[module_filter][subdir] = "contrib"
+projects[module_filter][version] = "1.8"
 
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.1"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.4"
+projects[og][version] = "2.7"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
@@ -111,14 +136,23 @@ projects[services_views][version] = "1.0-beta2"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
+projects[stage_file_proxy][subdir] = "contrib"
+projects[stage_file_proxy][version] = "1.5"
+
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.5"
 
 projects[uuid][subdir] = "contrib"
 projects[uuid][version] = "1.0-alpha5"
 
+projects[userpoints][subdir] = "contrib"
+projects[userpoints][version] = "1.0"
+
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
+
+projects[views_bulk_operations][subdir] = "contrib"
+projects[views_bulk_operations][version] = "3.1"
 
 projects[views_field_view][subdir] = "contrib"
 projects[views_field_view][version] = "1.1"
