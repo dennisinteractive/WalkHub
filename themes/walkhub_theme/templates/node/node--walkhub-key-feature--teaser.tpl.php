@@ -79,42 +79,13 @@
  * @ingroup themeable
  */
 ?>
-<?php if (isset($variables['field_subtitle'][0]['safe_value'])): ?>
-  <h2 class="blog-entry-subtitle"><?php echo $variables['field_subtitle'][0]['safe_value']; ?></h2>
-<?php endif; ?>
-<ul class="post-data">
-  <li>
-    <i class="fa fa-clock-o"></i>
-    <?php print t('Posted on'); ?>
-    <?php if (isset($submitted)) { ?>
-      <span class="month"><?php echo date("M", $node->created); ?></span>
-      <span class="day"><?php  echo date("d", $node->created); ?></span>
-      <span class="year"><?php  echo date("Y", $node->created); ?></span>
-    <?php } ?>
-  </li>
-  <?php if(isset($content['field_blog_category'])): ?>
-  <li class="tag">
-    <i class="fa fa-tag"></i>
-    <?php print render($content['field_blog_category']); ?>
-  </li>
-  <?php endif; ?>
-</ul>
-<div id="content">
-<?php if (isset($variables['field_image'][0]['uri'])): ?>
-  <div class="blog image">
-    <?php
-    $img_url = $variables['field_image'][0]['uri'];  // the orig image uri
-    $style = '720x278';  // or any other custom image style you've created via /admin/config/media/image-styles
-    ?>
-    <img typeof="foaf:Image" src="<?php print image_style_url($style, $img_url) ?>" alt="<?php print $title; ?>" width="720" height="278"/>
+<a href="<?php echo $variables["node_url"]; ?>" title="Walkhub feature: <?php echo $variables["title"]; ?>">
+  <h3 class="small-12"><?php echo $variables["title"]; ?></h3>
+  <div class="small-12">
+    <?php $img_url = $variables['field_whkf_icon'][0]['uri']; ?>
+    <img src="<?php print file_create_url($img_url) ?>" alt="<?php print $title; ?>" width="100" height="100" />
   </div>
-<?php endif; ?>
-
-<?php print render($content['body']); ?>
-
-<?php if (isset($variables['field_attachment'][0]['filename'])): ?>
-  <div class="attachment box l-grey">
-    <?php print render($content['field_attachment']); ?>
-  </div>
-<?php endif; ?>
-</div>
+</a>
+<p class="small-12">
+  <?php echo $variables["field_whkf_short_description"]['und'][0]["safe_value"]; ?>
+</p>

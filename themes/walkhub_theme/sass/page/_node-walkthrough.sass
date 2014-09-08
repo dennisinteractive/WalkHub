@@ -14,10 +14,32 @@
             content: "\e600"
             margin-left: .35em
 
+  .title-container
+    h1
+      display: inline-block
+    ul
+      list-style: none
+      display: inline-block
+      margin: 0
+
+      a
+        &.cta
+          padding: 0.2rem 0.8rem
+          position: relative
+          bottom: 4px
+          margin: 0 0 0 10px
+
+          &:after
+            content: "\e600"
+            margin-left: .35em
+
   .node-walkthrough
 
+    &.node-unpublished
+      background-color: #ffffff
+
     .wt-screening-widget-field
-      text-align: center
+      text-align: right
 
       a
         margin: 1em 0
@@ -176,6 +198,9 @@
           display: inline-block
           margin-right: .5em
 
+    .flag-message
+      margin-top: 8px
+
     .links.inline
       float: right
 
@@ -184,3 +209,39 @@
       li.flag-subscribe_content
         a
           +font-size(.6)
+
+.wt-severity-0
+  color: green
+
+.wt-severity-1
+  color: orange
+
+.wt-severity-2
+  color: red
+
+.walkthrough-sharelink-container
+  margin: 0 0 10px 0
+
+  .button
+    &.small
+      font-style: normal
+
+  .sharing-notice
+    margin: 0
+    +font-size(.8)
+
+    &.private
+      font-style: italic
+      color: #555555
+
+  .switch
+    +switch-style($switch-paddle-bg, rgba(0, 0 , 0, .1), rgba(0, 0, 0, .1), 0, true)
+    width: 50px
+    display: inline-block
+    margin: 0 5px
+    position: relative
+    top: 5px
+
+  .walkthrough-status-text
+    display: inline-block
+    margin: 0 0 6px 0

@@ -55,11 +55,10 @@ img
   position: absolute
   top: 0
   right: 0.9375em
-  z-index: 31
+  z-index: 0
 
   li
     a
-      +opacity(.5)
       +sassy-button("simple", 10px, 19px, #f4f4f5)
       +font-size(.65)
       +border-radius(.35em)
@@ -71,13 +70,9 @@ img
       padding: .4em 1em
 
       &.active
-        +opacity(1)
-
-      &:hover,
-      &:active
-        +opacity(1)
-        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75)
-        color: #6f6f6f
+        @include sassy-button-style("inset", darken(#f4f4f5, 30%))
+        color: darken(#6f6f6f, 50%)
+        background: darken(#f4f4f5, 30%)
 
     &:last-of-type a
       margin-right: 0
@@ -182,3 +177,7 @@ html.js input.form-autocomplete
 html.js input.throbbing
   +transition(none)
   background-position: 100% -12px
+
+/* Bold font styles
+strong, b
+  +font-museo-700

@@ -79,42 +79,47 @@
  * @ingroup themeable
  */
 ?>
-<?php if (isset($variables['field_subtitle'][0]['safe_value'])): ?>
-  <h2 class="blog-entry-subtitle"><?php echo $variables['field_subtitle'][0]['safe_value']; ?></h2>
-<?php endif; ?>
-<ul class="post-data">
-  <li>
-    <i class="fa fa-clock-o"></i>
-    <?php print t('Posted on'); ?>
-    <?php if (isset($submitted)) { ?>
-      <span class="month"><?php echo date("M", $node->created); ?></span>
-      <span class="day"><?php  echo date("d", $node->created); ?></span>
-      <span class="year"><?php  echo date("Y", $node->created); ?></span>
-    <?php } ?>
-  </li>
-  <?php if(isset($content['field_blog_category'])): ?>
-  <li class="tag">
-    <i class="fa fa-tag"></i>
-    <?php print render($content['field_blog_category']); ?>
-  </li>
-  <?php endif; ?>
-</ul>
-<div id="content">
-<?php if (isset($variables['field_image'][0]['uri'])): ?>
-  <div class="blog image">
-    <?php
-    $img_url = $variables['field_image'][0]['uri'];  // the orig image uri
-    $style = '720x278';  // or any other custom image style you've created via /admin/config/media/image-styles
-    ?>
-    <img typeof="foaf:Image" src="<?php print image_style_url($style, $img_url) ?>" alt="<?php print $title; ?>" width="720" height="278"/>
+<div class="row">
+  <div class="small-3 columns">
+    <?php $img_url = $variables['field_whkf_icon'][0]['uri']; ?>
+    <img src="<?php print file_create_url($img_url) ?>" alt="<?php print $title; ?>" width="140" height="140"/>
   </div>
-<?php endif; ?>
-
-<?php print render($content['body']); ?>
-
-<?php if (isset($variables['field_attachment'][0]['filename'])): ?>
-  <div class="attachment box l-grey">
-    <?php print render($content['field_attachment']); ?>
-  </div>
-<?php endif; ?>
+  <h3 class="feature-summary small-9 columns">
+    <?php echo $variables["field_whkf_short_description"][0]["safe_value"]; ?>
+  </h3>
 </div>
+<div class="row">
+  <div class="feature-body small-12 columns">
+    <?php echo $variables["field_whkf_body"][0]["safe_value"]; ?>
+  </div>
+</div>
+
+<?php if (isset($content["field_whkf_exmaple_media"])): ?>
+  <?php foreach ($content["field_whkf_exmaple_media"]["#items"] as $key => $value): ?>
+    <?php $media = $content["field_whkf_exmaple_media"][$key]["entity"]["field_collection_item"][$value["value"]]; ?>
+
+    <?php if (isset($media["field_whkf_example_media_title"])): ?>
+      <div class="row">
+        <h2 class="small-12 columns"><?php echo $media["field_whkf_example_media_title"]["#items"][0]["safe_value"]; ?></h2>
+      </div>
+    <?php endif; ?>
+
+    <?php if (isset($media["field_whkf_example_media_youtube"])): ?>
+      <div class="youtube-container">
+        <iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $media["field_whkf_example_media_youtube"]["#items"][0]["safe_value"]; ?>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <?php endif; ?>
+
+    <?php if (isset($media["field_whkf_example_media_image"])): ?>
+      <div class="row image-container">
+        <div class="small-12 columns small-centered">
+          <img src="<?php print file_create_url($media["field_whkf_example_media_image"]["#items"][0]["uri"]); ?>" alt="<?php print $title; ?>"/>
+        </div>
+      </div>
+    <?php endif ?>
+
+    <?php if (isset($media["field_whkf_example_media_demo_wt"])): ?>
+      <?php echo $media["field_whkf_example_media_demo_wt"]["#items"][0]["value"]; ?>
+    <?php endif; ?>
+  <?php endforeach; ?>
+<?php endif; ?>
